@@ -11,18 +11,14 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "dm-is-audited"
   gem.homepage = "http://github.com/alexgb/dm-is-audited"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "alex.gibbons@gmail.com"
+  gem.summary = %Q{model level auditing for DataMapper}
+  gem.description = %Q{Plugin for DataMapper to allow for simple auditing of models. This plugin does not implement auditing itself, but creates a block context in which you can implement your own auditing procedures.}
+  gem.email = "alex.gibbons [a] gmail [dot] com"
   gem.authors = ["Alex Gibbons"]
-  # Include your dependencies below. Runtime dependencies are required when using your gem,
-  # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.add_dependency 'dm-core'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

@@ -1,6 +1,6 @@
 # dm-is-audited
 
-Plugin for DataMapper to allow for simple auditing of models. This plugin does not implement auditing itself, but merely creates a block context in which you can implement your own auditing procedures.
+Plugin for DataMapper to allow for simple auditing of models. This plugin does not implement auditing itself, but creates a block context in which you can implement your own auditing procedures.
 
 ## Example
 
