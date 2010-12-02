@@ -2,6 +2,10 @@
 
 Plugin for DataMapper to allow for simple auditing of models. This plugin does not implement auditing itself, but creates a block context in which you can implement your own auditing procedures.
 
+## Install
+
+    gem install dm-is-audited
+
 ## Example
 
 Each time a person is created, updated, or destroyed the block passed to audit will be evaluated in the context of the changed resource. Use the `action` parameter and the resource method `changes` to construct your audit logs.
