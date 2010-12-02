@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "dm-is-audited.gemspec",
     "lib/dm-is-audited.rb",
     "lib/dm-is-audited/is/audited.rb",
     "lib/dm-is-audited/is/audited/model.rb",
