@@ -5,9 +5,9 @@ module DataMapper
         
         def changes
           if @audited_original_attributes
-            @audited_original_attributes.merge(@audited_original_attributes) do |property, value|
+            @audited_original_attributes.merge(@audited_original_attributes) { |property, value|
               [value, attribute_get(property.name)] if attribute_get(property.name) != value
-            end
+            }.delete_if {|k,v| v.nil?}
           else
             {}
           end
