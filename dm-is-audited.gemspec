@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{dm-is-audited}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alex Gibbons"]
-  s.date = %q{2010-12-20}
+  s.date = %q{2011-03-10}
   s.description = %q{Plugin for DataMapper to allow for simple auditing of models. This plugin does not implement auditing itself, but creates a block context in which you can implement your own auditing procedures.}
   s.email = %q{alex.gibbons [a] gmail [dot] com}
   s.extra_rdoc_files = [
