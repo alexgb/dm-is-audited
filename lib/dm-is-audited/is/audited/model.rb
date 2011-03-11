@@ -8,7 +8,6 @@ module DataMapper
           audited_attributes = fields.collect { |name| properties[name] }
           
           before :save do
-            puts audited_attributes.inspect
             @audited_original_attributes = original_attributes.dup.delete_if { |key, value| !audited_attributes.include?(key) }
             @audited_new_record = new?
           end
