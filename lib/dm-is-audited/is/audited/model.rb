@@ -3,25 +3,25 @@ module DataMapper
     module Audited
       module Model
         
-        def audit (*fields, &block)
-          
-          audited_attributes = fields.collect { |name| properties[name] }
-          
+        def audit (*audited_attributes, &block)
           before :save do
-            @audited_original_attributes = original_attributes.dup.delete_if { |key, value| !audited_attributes.include?(key) }
+            @original_attributes = original_attributes.map {|p,v| [p.name, v]}.to_h
             @audited_new_record = new?
           end
 
           after :save do
-            self.instance_exec(@audited_new_record ? :create : :update, &block) if !changes.empty? || @audited_new_record
+            update_attributes_changes @original_attributes, attributes, audited_attributes
+            next if changes.empty? and not @audited_new_record
+
+            self.instance_exec(@audited_new_record ? :create : :update, &block)
           end
 
           after :destroy do
+            update_attributes_changes attributes, {}, audited_attributes
             self.instance_exec(:destroy, &block)
           end
-          
+
         end
-        
       end
     end
   end
